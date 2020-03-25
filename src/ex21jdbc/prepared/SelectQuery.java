@@ -9,7 +9,6 @@ public class SelectQuery extends IConnectImpl{
 	public SelectQuery() {
 		super("kosmo","1234");
 	}
-	
 	@Override
 	public void execute() {
 		try {
