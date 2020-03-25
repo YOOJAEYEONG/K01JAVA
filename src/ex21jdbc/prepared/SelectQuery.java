@@ -14,7 +14,7 @@ public class SelectQuery extends IConnectImpl{
 		// TODO Auto-generated method stub
 
 		System.out.println("sd");
-		sysout();
+		
 	}
 	@Override
 	public void execute() {
