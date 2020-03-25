@@ -9,6 +9,13 @@ public class SelectQuery extends IConnectImpl{
 	public SelectQuery() {
 		super("kosmo","1234");
 	}
+	//3drfgvzdfgvzfdgzdfg
+	private void sysout() {
+		// TODO Auto-generated method stub
+
+		System.out.println("sd");
+		sysout();
+	}
 	@Override
 	public void execute() {
 		try {
