@@ -7,9 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+//인터페이스를 구현하는 클래스는 이름선언시 뒤에 Impl을 붙여주는것이 명시적으로 좋다.
 public class IConnectImpl implements IConnect {
 
-	
+	//동적쿼리를 위한 객체
 	public Connection con;
 	public PreparedStatement psmt;
 	public ResultSet rs;
@@ -20,7 +21,9 @@ public class IConnectImpl implements IConnect {
 	public IConnectImpl(String user, String pass) {
 		System.out.println("IConnectImpl 인자생성자 호출");
 		try {
+			//드라이버 로드
 			Class.forName(ORACLE_DRIVER);
+			//DB연결
 			connect(user, pass);
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩 실패");
@@ -39,8 +42,9 @@ public class IConnectImpl implements IConnect {
 		}		
 	}
 
+	//오버라이딩의 목적으로 정의한 메소드. 쿼리실행은 각 클래스에서 함.
 	@Override
-	public void execute() {	}
+	public void execute() { /* 하는일은 없음 */	}
 
 	@Override
 	public void close() {
@@ -56,6 +60,7 @@ public class IConnectImpl implements IConnect {
 		
 	}
 
+	//사용자로부터 입력값을 받기 위한 메소드
 	@Override
 	public String scanValue(String title) {
 		
@@ -63,6 +68,11 @@ public class IConnectImpl implements IConnect {
 		System.out.println(title + "을 입력(exit->종료):");
 		String inputStr = scan.nextLine();
 		
+		/*
+		A.equalsIgnoreCase(B) 
+			: equals()메소드와 동일하게 문자열이 같은지 비교하는 메소드로 
+			다른점은 대소문자를 구분하지 않고 비교한다.
+		 */
 		if("EXIT".equalsIgnoreCase(inputStr)) {
 			System.out.println("프로그램을 종료합니다.");
 			close();
@@ -71,10 +81,6 @@ public class IConnectImpl implements IConnect {
 		}
 		return inputStr;
 	}
-
-
-
-	
 }
 
 
