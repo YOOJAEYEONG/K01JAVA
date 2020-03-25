@@ -13,7 +13,7 @@ public class SelectQuery extends IConnectImpl{
 	private void sysout() {
 		// TODO Auto-generated method stub
 
-		System.out.println("sd");
+		System.out.println("sdㅅ");
 		
 	}
 	@Override
