@@ -17,6 +17,11 @@ public class DBConnection {
 		  	: new를 사용하지 않고 클래스명으로 직접 찾아서 객체생성후
 		  	메모리에 로드하는 forName()메소드를 사용한다. 메모리에
 		  	로딩된 드라이버가 DriverManager라는 클래스에 등록된다.
+		  	정적 블록을 갖는 클래스들은 Class.forName() 만 호출해도 초기화가 수행된다
+			Class.forName()을 호출하면 Driver 가 자기자신을 초기화하여 DriverManager에 등록을 한다.
+			즉 개발자가 따로 관리하지 않는 static 객체들이 알아서 DriverManager에 등록이 되는 것이다.
+			그래서 Class.forName()을 호출하고 나서 어떠한 인자로도 전달하지 않고
+			바로 getConnection()을 호출해도 드라이버가 찾아지는 것이다.
 		 */
 		Class.forName("oracle.jdbc.OracleDriver");
 		
