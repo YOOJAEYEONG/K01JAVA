@@ -60,7 +60,7 @@ public class DeleteSQL {
 	
 	private void close() {
 		try {
-			if(stmt!=null)	stmt.close();
+			if(stmt!=null)	stmt.close(); //stmt객체가 열려있으면 닫는다
 			if(con!=null)	con.close();
 			System.out.println("자원반납완료");
 		} catch (Exception e) {
