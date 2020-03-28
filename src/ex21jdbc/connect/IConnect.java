@@ -19,6 +19,7 @@ public interface IConnect {
 	void execute();// 쿼리실행
 	void close();// 자원반납
 	
-	//사용자 입력을 위한 추상메소드 선언
+	
+	//사용자 입력을 위한 추상메소드 선언.
 	String scanValue(String title);
 }
