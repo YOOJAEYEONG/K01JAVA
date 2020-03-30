@@ -17,7 +17,7 @@ public class Ex04HashSet2 {
 		hashSet.add(p1);
 		hashSet.add(p2);
 		boolean b = hashSet.add(p3);
-		System.out.println("p3객체 저장여부:"+b);
+		System.out.println("p3객체 저장여부:"+b);//false
 		
 		System.out.println("HashSet에 저장된 객체수:"+hashSet.size());
 		
