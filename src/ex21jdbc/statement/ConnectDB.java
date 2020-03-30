@@ -9,10 +9,8 @@ import java.sql.Statement;
 //객체 생성의 목적이 아닌 상속의 목적으로 정의된 추상 클래스
 public abstract class ConnectDB {
 
-	/*
-	맴버변수 : 상속받은 하위클래스에서 접근을 허용하기 위해
-		접근지정자는 protected로 선언함
-	 */
+	
+	//맴버변수 : 상속받은 하위클래스에서 접근을 허용하기 위해
 	protected Connection con;
 	protected Statement stmt;
 	protected ResultSet rs;
@@ -66,9 +64,8 @@ public abstract class ConnectDB {
 		}
 	}
 	
-	/*
-	오버라이딩을 목적으로 정의한 추상메소드
-	 */
+	
+	//오버라이딩을 목적으로 정의한 추상메소드
 	abstract void execute();
 }
 
