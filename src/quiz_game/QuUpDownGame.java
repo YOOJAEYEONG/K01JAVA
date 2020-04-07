@@ -18,16 +18,16 @@ import java.util.Scanner;
 public class QuUpDownGame {
 
 	static Scanner sc = new Scanner(System.in);
+	static int randomNumber;
 
 	public static void main(String[] args) {
 
 		int inputNumber;
-		int randomNumber;
 		int life=7 ;
 
 		System.out.println("▩▩업&다운게임▩▩");
 		randomNumber = (int)(Math.random()*100+1);	
-
+		System.out.println(randomNumber);
 		for(boolean gameOnOff = true ; gameOnOff ; ) {
 			System.out.println("시작합니다\n1~100사이의 수를 입력하세요");
 			for( ; life>0; life--) {
@@ -59,6 +59,7 @@ public class QuUpDownGame {
 		switch (sc.nextInt()) {
 		
 			case 1: 
+				randomNumber = (int)(Math.random()*100+1);
 				return true ; 
 			case 0:
 				return false;
