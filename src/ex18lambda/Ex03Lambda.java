@@ -42,5 +42,11 @@ public class Ex03Lambda {
 			System.out.println(str+"완전 간단!!!");
 	
 		kosmo2.studyLambda("람다식..");
+		
+		
+		IKosmo3 ik3 = (String str) -> {
+			System.out.println(str+"이 바로 이것");
+		};
+		ik3.studyLambda("익명클래스 다음");
 	}
 }

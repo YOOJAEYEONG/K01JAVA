@@ -21,5 +21,16 @@ public class Ex02AnonymousClass {
 			}
 		};
 		kosmo.studyLambda("람다식");
+		///////////////////////////
+		IKosmo2 ik = new IKosmo2() {
+			
+			@Override
+			public void studyLambda(String str) {
+				// TODO Auto-generated method stub
+				System.out.println(str+"을 시도함");
+			}
+		};
+		ik.studyLambda("AnonymousClass");
+		ik.studyLambda("연습");
 	}
 }
