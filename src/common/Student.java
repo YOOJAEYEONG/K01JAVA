@@ -8,6 +8,7 @@ public class Student extends Person {
 		this.stNumber = stNumber;
 	}
 	
+	
 	@Override
 	public String getInfo() {
 		return super.getInfo() +", 학번:"+ stNumber;
