@@ -38,18 +38,12 @@ import java.util.Scanner;
 
 */
 
-class WrongNumberException extends InputMismatchException{
+class WrongNumberException extends Exception{
 	
 	
-	
+	public WrongNumberException() {}
 	public WrongNumberException(String str) {
-		if(str.equals("exit")) {
-			System.out.println("재시작(1), 종료(0)중에 입력하세요");
-			
-		}
-		if(str=="onGame") {
-			System.out.println("다음중에 선택하세요");
-		}
+		super("테스트1"+str);
 	}
 	
 }
@@ -71,9 +65,8 @@ public class QuRockPaperScissorsException {
 			try {
 				inputNum = readInt("onGame");
 				
-			} catch (InputMismatchException numEx) {
-				System.out.println("잘못 입력했습니다.");
-
+			} catch (InputMismatchException | WrongNumberException numEx) {
+				new WrongNumberException("강제적인 예외발생");
 			}
 				
 			if(inputNum>=1 && inputNum <= 3) {
@@ -122,7 +115,7 @@ public class QuRockPaperScissorsException {
 						}
 						
 						
-					} catch (InputMismatchException numEx) {
+					} catch (InputMismatchException | WrongNumberException numEx) {
 						System.out.println("여기서 숫자만 입력가능합니다.");
 						continue;
 					}
@@ -145,12 +138,7 @@ public class QuRockPaperScissorsException {
 		Scanner scan = new Scanner(System.in);
 		int inputVal = 0;
 		for( ;;) {
-			try {
-				inputVal = scan.nextInt();
-			} catch (WrongNumberException numEx) {
-				System.out.println("숫자만 입력가능합니다!!!!");
-		
-			}
+			inputVal = scan.nextInt();
 			
 			if(strSwitch.equals("onGame")) {
 				if(inputVal<1 || 3 < inputVal) {
