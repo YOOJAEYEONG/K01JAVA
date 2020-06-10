@@ -5,6 +5,24 @@ import java.sql.Types;
 
 import ex21jdbc.connect.IConnectImpl;
 
+
+/*
+java에서 프로시저 호출하기
+
+[1]프로시저를 실행하기 위한 CallableStatement객체 생성
+-프로시저 호출시에는 { call 프로시저명(?,?,? ...? ) }
+-파라미터는 in, out 순으로 작성이 가능함. 즉, 프로시저 정의에 따라 달라진다.
+
+[2]파라미터 설정
+	2-1] in파라미터 설정 : ? 에 해당하는 순서대로 setter()로 설정함.
+		setxxx(인덱스, 값);
+	2-2] out 파라미터 설정 : 
+		registerOutParameter(인덱스, java.sql.Types의 변수형)으로 자료형 설정
+[3]프로시저 실행
+	execute();
+[4]out 파라미터에 저장된 값 불러오기
+	getter()로 읽어옴
+ */
 public class InsertProcCall extends IConnectImpl{
 
 	
