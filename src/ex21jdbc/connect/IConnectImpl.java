@@ -1,10 +1,12 @@
 package ex21jdbc.connect;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 //인터페이스를 구현하는 클래스는 이름선언시 뒤에 Impl을 붙여주는것이 명시적으로 좋다.
@@ -12,7 +14,10 @@ public class IConnectImpl implements IConnect {
 
 	//동적쿼리를 위한 객체
 	public Connection con;
-	public PreparedStatement psmt;
+	public PreparedStatement psmt; //insert, update 등의 동적 쿼리
+	public Statement smt;//정적 쿼리 select등 (동적쿼리보다 속도가 빠르다)
+	//프로시져 혹은 함수를 호출하기 위한 객체 
+	public CallableStatement csmt;
 	public ResultSet rs;
 	
 	public IConnectImpl() {
