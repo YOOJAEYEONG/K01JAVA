@@ -15,7 +15,7 @@ public class IConnectImpl implements IConnect {
 	//동적쿼리를 위한 객체
 	public Connection con;
 	public PreparedStatement psmt; //insert, update 등의 동적 쿼리
-	public Statement smt;//정적 쿼리 select등 (동적쿼리보다 속도가 빠르다)
+	public Statement stmt;//정적 쿼리 select등 (동적쿼리보다 속도가 빠르다)
 	//프로시져 혹은 함수를 호출하기 위한 객체 
 	public CallableStatement csmt;
 	public ResultSet rs;
