@@ -23,7 +23,7 @@ public class E02BokhapOperator {
 		System.out.println("n의 결과값:" + n);
 		n=5;
 		n *= 2.7;/* 결과값은 13
-			정상:기종의 자료형을 유지한다.
+			정상:기존의 자료형을 유지한다.
 			문법구조상 명시적 형변환된 결과가 반환된다고 생각하면된다.*/ 
 		System.out.println("n의 결과값:" + n);
 	}
