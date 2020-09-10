@@ -30,9 +30,12 @@ public class DBConnection {
 			커넥션URL => jdbc:oracle:thin://@IP주소:포트번호:SID
 			***서버환경에 따라 IP주소, 포트번호, SID는 변경될 수 있다.
 		 */
-		String url = "jdbc:oracle:thin://@localhost:1521:orcl";
-		String userid = "hr";
-		String userpw = "1234";
+		//String url = "jdbc:oracle:thin://@localhost:1521:orcl";
+		//String userid = "hr";
+		//String userpw = "1234";
+		String url = "jdbc:oracle:thin:@alouerdb.ct7ir1xc2f4m.ap-northeast-2.rds.amazonaws.com:1521:ORCL";
+		String userid = "aliuerUser";
+		String userpw = "T3sshutd0n?";
 		/*
 		2-1] DriverManager클래스의 getConnection()메소드를 호출하여
 			오라클에 연결을 시도한다. 연결에 성공할 경우 연결된 주소를 반환한다.
